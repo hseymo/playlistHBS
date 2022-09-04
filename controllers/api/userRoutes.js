@@ -3,7 +3,7 @@ const router = express.Router();
 const { User, Song } = require("../../models");
 
 router.get("/", async (req,res) => {
-    try{
+    try {
         const userData = await User.findAll({
             include:[Song]
         })
@@ -16,13 +16,13 @@ router.get("/", async (req,res) => {
 })
 
 router.get("/:id", async (req,res) => {
-    try{
+    try {
         const userData = await User.findByPk(req.params.id, {
             include: [Song]
         })
-        if (!userData){
-            res.status(404).json({msg: "an error occured"})
-        } 
+        // if (!userData){
+        //     res.status(404).json({msg: "user does not exist"})
+        // } 
         res.json(userData)
     } catch (err) {
         console.log(err);
@@ -31,7 +31,7 @@ router.get("/:id", async (req,res) => {
 })
 
 router.post("/", async (req,res) => {
-    try{
+    try {
         const userData = await User.create(
             {
             name: req.body.name,
@@ -45,7 +45,7 @@ router.post("/", async (req,res) => {
 })
 
 router.put("/:id", async (req,res) => {
-    try{
+    try {
         const updatedUser = await User.update(
             {
                 name: req.body.name,
@@ -55,11 +55,9 @@ router.put("/:id", async (req,res) => {
                 }
             }
         )
-
-        if (!updatedUser[0]){
-            res.status(404).json({msg: "an error occured", err: err})
-        }
-
+        // if (!updatedUser[0]){
+        //     res.status(404).json({msg: "user does not exist"})
+        // }
         res.json(updatedUser);
 
     } catch (err) {
@@ -77,10 +75,9 @@ router.delete("/:id", async (req,res) => {
                 id: req.params.id
             }
         })
-        console.log(delUser)
-        if (!delUser[0]){
-            res.status(404).json({msg: "1", err: err})
-        }
+        // if (!delUser[0]){
+        //     res.status(404).json({msg: "user does not exist"})
+        // }
         res.json(delUser)
     } catch (err) {
         console.log(err);

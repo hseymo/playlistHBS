@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const {User,Song} = require("../../models");
 
+// good
 router.get("/", async (req,res) => {
-    try{
+    try {
         const songData = await Song.findAll({
             include:[User]
         })
@@ -15,21 +16,25 @@ router.get("/", async (req,res) => {
     }
 })
 
+// 
 router.get("/:id", async (req,res) => {
-    try{
-        const songData = await Song.findByPK(req.params.id, {
+    try {
+        const songData = await Song.findByPk(req.params.id, {
             include:[User]
         })
         if (!songData){
-            res.status(404).json({msg: "an error occured", err: err})
-        }
+            res.status(404).json({msg: "song does not exist"})
+        } else {
         res.json(songData)
+        }
+        
     } catch (err) {
         console.log(err);
         res.status(500).json({ msg: "an error occured", err });
     }
 })
 
+// good
 router.post("/", async (req, res) => {
     try {
         const songData = await Song.create(
@@ -48,8 +53,8 @@ router.post("/", async (req, res) => {
 })
 
 router.put("/:id", async (req,res) => {
-    try{
-        const updatedSong = await Song.update(
+    try {
+        const response = await Song.update(
             {
                 song_name: req.body.song_name,
                 artist: req.body.artist,
@@ -61,13 +66,11 @@ router.put("/:id", async (req,res) => {
                 }
             }
         )
-
-        if (!updatedSong[0]){
-            res.status(404).json({msg: "an error occured", err: err})
+        if (!response[0]){
+            res.status(404).json({msg: "song does not exist"})
+        } else {
+            res.json("successfully updated song");
         }
-
-        res.json(updatedSong);
-
     } catch (err) {
         console.log(err);
         res.status(500).json({ msg: "an error occured", err });
@@ -75,16 +78,15 @@ router.put("/:id", async (req,res) => {
 })
 
 router.delete("/:id", async (req,res) => {
-    try{
-        const delSong = Song.destroy({
+    try {
+        const response = Song.destroy({
             where: {
                 id: req.params.id
             }
         })
-        if (!delSong[0]){
-            res.status(404).json({msg: "an error occured", err: err})
-        }
-        res.json(delSong)
+        console.log(response)
+        // does not show if song was existant in database but that is okay - either way not in database
+        res.json("song removed from database")
     } catch (err) {
         console.log(err);
         res.status(500).json({ msg: "an error occured", err });
