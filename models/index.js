@@ -1,12 +1,12 @@
-const Person = require("./Person");
+const User = require("./User");
 const Song = require("./Song");
 
-Person.hasMany(Song);
-Song.belongsTo(Person);
+User.hasMany(Song);
+Song.belongsTo(User);
 
 // could be many to many; could add in artist and genre seperate from song
 
 module.exports = {
-    Person,
+    User,
     Song
 }

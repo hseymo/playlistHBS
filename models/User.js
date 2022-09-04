@@ -1,13 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Person extends Model {}
+class User extends Model {}
 
-Person.init({
+User.init({
     name: {
          type: DataTypes.STRING,
          allowNull:false,
-         unique:true,
          validate: {
             isAlphanumeric: true
          }
@@ -16,4 +15,4 @@ Person.init({
     sequelize,
 });
 
-module.exports=Person;
+module.exports=User;
