@@ -1,20 +1,30 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Playlist</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        Our playlist!
-      </h1>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Playlist</title>
+    {{! <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"> }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Our Playlist</h1>
     </header>
-      <main class="container container-fluid mt-5">
-        {{{ body }}}
-      </main>
-  </div>
+    <main>
+      <h2 class="description">Enjoy our collaborative list of songs!</h2>
+      <h2 class="description">Want to listen? Click here to get started
+        listening on your preferred platform!</h2>
+      {{{body}}}
+    </main>
+    {{! <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script> }}
+    <script src="/js/script.js"></script>
   </body>
-
 </html>

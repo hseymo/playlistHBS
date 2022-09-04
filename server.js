@@ -8,8 +8,6 @@ const controllers = require('./controllers');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// const { Person, Song } = require('./models');
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

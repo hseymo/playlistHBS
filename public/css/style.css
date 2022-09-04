@@ -1,0 +1,86 @@
+:root {
+    --lightgray: #F6F6F2;
+    --mint: #C2EDCE;
+    --lightblue: #BADFE7;
+    --teal: #6FB3B8;
+    --darkteal: #388087;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--darkteal);
+    font-family: 'Sora', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+    background-color: var(--lightgray);
+}
+
+header {
+    background-color: var(--lightblue);
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    background-color: var(--lightblue);
+    color: var(--darkteal);
+    padding: 10px;
+}
+
+.description {
+    text-align: center;
+    margin: 5px 20px;
+    font-size: 20px;
+}
+
+.listContainer, .singleContainer {
+    background-color: var(--teal);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.singleContainer {
+    min-height: 100%;
+}
+
+.songCard, .singleSong {
+    background-color: var(--lightblue);
+    border: 5px solid var(--lightgray);
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+button {
+    margin: 10px;
+    padding: 5px;
+}
+
+.songCard h1, .singleSong h1 {
+    font-size: 30px;
+    padding: 10px;
+}
+
+.songCard h2, .singleSong h2 {
+    font-size: 25px;
+    padding: 10px;
+}
+
+.songCard h3, .singleSong h3 {
+    font-size: 20px;
+    padding: 7px;
+}
