@@ -1,5 +1,5 @@
-<section class="singleSong col-6">
-    <h1 class="card-title">Song Title: {{song_name}}</h1>
+<section class="singleSong card">
+    <h1>Song Title: {{song_name}}</h1>
     <h2>Artist: {{artist}}</h2>
     {{#if genre}}
     <h3>Genre: {{genre}}</h3>
@@ -7,6 +7,6 @@
     {{#if UserId}}
     <h3>Picked by: {{User.name}}</h3>
     {{/if}}
-    <button>Click here to listen on Spotify!</button>
-    <button>Click here to listen on Apple Music!</button>
+    <a href="https://www.spotify.com" target="_blank"><button>Click here to listen on Spotify!</button></a>
+    <a href="https://www.applemusic.com" target="_blank"><button>Click here to listen on Apple Music!</button></a>
 </section>
