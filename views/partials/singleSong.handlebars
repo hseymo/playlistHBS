@@ -1,12 +1,22 @@
 <section class="singleSong card">
-    <h1>Song Title: {{song_name}}</h1>
-    <h2>Artist: {{artist}}</h2>
-    {{#if genre}}
+  <h1>Song Title: {{song_name}}</h1>
+  <h2>Artist: {{artist}}</h2>
+  {{#if genre}}
+  <section class="subsection">
     <h3>Genre: {{genre}}</h3>
-    {{/if}}   
-    {{#if UserId}}
+  {{/if}}
+  {{#if UserId}}
     <h3>Picked by: {{User.name}}</h3>
-    {{/if}}
-    <a href="https://www.spotify.com" target="_blank"><button>Click here to listen on Spotify!</button></a>
-    <a href="https://www.applemusic.com" target="_blank"><button>Click here to listen on Apple Music!</button></a>
+  {{/if}}
+  </section>
+    <section class="btnSection">
+    <button class="updateBtn">Update</button>
+    <button class="deleteBtn">Delete</button>
+    </section>
+  <section>
+    <a href="https://www.spotify.com" target="_blank"><button>Click here to
+        listen on Spotify!</button></a>
+    <a href="https://www.applemusic.com" target="_blank"><button>Click here to
+        listen on Apple Music!</button></a>
+  </section>
 </section>

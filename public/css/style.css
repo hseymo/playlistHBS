@@ -66,6 +66,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .card {
@@ -99,6 +100,18 @@ header h1 {
     padding: 7px;
 }
 
+.subSection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btnSection button {
+    background-color: var(--darkteal);
+    color: var(--lightgray)
+}
+
 button {
     margin: 10px;
     padding: 5px;
@@ -106,11 +119,6 @@ button {
 
 .createContainer {
     min-height: 85vh;
-}
-
-.createContainer h2 {
-    text-align: center;
-    padding-top: 20px;
 }
 
 #addForm {
@@ -125,4 +133,8 @@ button {
     width:30vw;
     padding:5px;
     margin: 10px;
+}
+
+.homeRedirect {
+    padding: 20px
 }
