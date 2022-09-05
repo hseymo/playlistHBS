@@ -39,24 +39,31 @@ header h1 {
 }
 
 .description {
-    text-align: center;
     margin: 5px 20px;
     font-size: 20px;
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .container {
     background-color: var(--teal);
     margin-top: 20px;
-    display: flex;
 }
 
 .listContainer {
+    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .singleContainer {
     min-height: 80vh;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -95,4 +102,27 @@ header h1 {
 button {
     margin: 10px;
     padding: 5px;
+}
+
+.createContainer {
+    min-height: 85vh;
+}
+
+.createContainer h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#addForm {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+}
+
+#addForm input {
+    width:30vw;
+    padding:5px;
+    margin: 10px;
 }
