@@ -36,6 +36,7 @@ router.post("/", async (req, res) => {
       song_name: req.body.song_name,
       artist: req.body.artist,
       genre: req.body.genre,
+      UserId: req.body.UserId
     });
     res.status(200).json(songData);
   } catch (err) {
@@ -51,6 +52,7 @@ router.put("/:id", async (req, res) => {
         song_name: req.body.song_name,
         artist: req.body.artist,
         genre: req.body.genre,
+        UserId: req.body.UserId
       },
       {
         where: {
