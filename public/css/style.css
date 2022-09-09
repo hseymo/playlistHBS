@@ -138,3 +138,8 @@ button {
 .homeRedirect {
     padding: 20px
 }
+
+form input {
+    margin: 7px;
+    padding: 5px;
+}
